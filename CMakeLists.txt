@@ -18,8 +18,8 @@ REQUIRED)
 
 add_executable(wireless-gui
   main.cpp
-  mainwindow.cpp
-  mainwindow.h
+        main_window.cpp
+        main_window.h
         )
 
 target_link_libraries(wireless-gui PRIVATE Qt5::Widgets Qt5::Charts)
