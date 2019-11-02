@@ -10,6 +10,9 @@
 #include <QTimer>
 #include <QtCharts/QValueAxis>
 
+#include "live_chart.h"
+
+
 using namespace QtCharts;
 
 class MainWindow : public QMainWindow
@@ -23,15 +26,9 @@ public slots:
     void handleTimeout();
 private:
     QChartView* chartView;
-    QChart* chart;
+    LiveChart* chart;
     QTimer m_timer;
-    QSplineSeries *m_series;
-    QStringList m_titles;
-    QValueAxis *m_axisX;
-    QValueAxis *m_axisY;
-    qreal m_step;
-    qreal m_x;
-    qreal m_y;
+    qreal newY;
 
 };
 #endif // MAINWINDOW_H
