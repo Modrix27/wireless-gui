@@ -16,7 +16,7 @@ LiveChart::LiveChart(QGraphicsItem *parent, Qt::WindowFlags wFlags) : QChart(QCh
     series->attachAxis(xAxis);
     series->attachAxis(yAxis);
 
-    xAxis->setRange(0, 10);
+    xAxis->setRange(0, 1000);
     yAxis->setRange(0, 100);
 
     series->append(0, 0);
@@ -35,6 +35,7 @@ void LiveChart::append(int yVal) {
 //    series->append(t, yVal);
     qreal newX = series->at(series->count()-1).x() + 1;
     series->append(newX, yVal);
+//    qDebug() << t;
 //    scroll(10, 0);
-    if(newX >= xAxis->max()) xAxis->setRange(xAxis->max() - 5, xAxis->max()+5);
+    if(newX >= xAxis->max()) xAxis->setRange(xAxis->max() - 500, xAxis->max()+500);
 }

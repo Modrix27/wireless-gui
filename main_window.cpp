@@ -7,7 +7,7 @@
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
 QObject::connect(&m_timer, &QTimer::timeout, this, &MainWindow::handleTimeout);
-m_timer.setInterval(500); // setup 1-second delay between updates to graph
+m_timer.setInterval(20); // setup 1-second delay between updates to graph
 
 chart = new LiveChart();
 chart->legend()->hide();
@@ -25,6 +25,7 @@ m_timer.start();
 void MainWindow::handleTimeout()
 {
     newY = QRandomGenerator::global()->bounded(100);
+
     chart->append(newY);
 }
 
